@@ -155,5 +155,4 @@ class _SignUpPageState extends State<SignUpPage> {
     }
   }
 
-  //RaisedButton({required void Function() onPressed, required Text child}) {}
 }
