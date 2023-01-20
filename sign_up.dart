@@ -65,7 +65,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
                       decoration: InputDecoration(
-                          labelText: 'Front Name',
+                          labelText: 'First Name',
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(30)),
                           suffixIcon: Icon(Icons.person)),
@@ -80,7 +80,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
                       decoration: InputDecoration(
-                          labelText: 'Back Name',
+                          labelText: 'Last Name',
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(30)),
                           suffixIcon: Icon(Icons.person)),
