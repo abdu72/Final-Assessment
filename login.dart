@@ -1,29 +1,15 @@
+import 'package:auth_project/auth_service.dart';
 import 'package:flutter/material.dart';
-import 'package:projectmdv/main.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'sign_up.dart';
 
-void main() => runApp(MyApp());
-
-class LoginPage extends StatefulWidget {
-  @override
-  const LoginPage({Key? key, required this.title}) : super(key: key);
-  _LoginPageState createState() => _LoginPageState();
-  final String title;
-}
-
-class _LoginPageState extends State<LoginPage> {
-  final _formKey = GlobalKey<FormState>();
-
-  String? _email, _password;
-
+class LoginPage extends StatelessWidget {
+  TextEditingController emailController = TextEditingController(text: "");
+  TextEditingController passwordController = TextEditingController(text: "");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //appBar: AppBar(
-      //title: new Center(
-      //child: new Text(widget.title, textAlign: TextAlign.center)),
-      //),
       body: Form(
-        key: _formKey,
         child: Column(
           children: <Widget>[
             SizedBox(height: 100),
@@ -45,27 +31,22 @@ class _LoginPageState extends State<LoginPage> {
             Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: TextFormField(
+                  controller: emailController,
                   decoration: InputDecoration(
                       labelText: 'Email',
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30)),
                       suffixIcon: Icon(Icons.person)),
-                  validator: (input) =>
-                      !input!.contains('@') ? 'Not a valid email' : null,
-                  onSaved: (input) => _email = input,
                 )),
             Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: TextFormField(
+                  controller: passwordController,
                   decoration: InputDecoration(
                       labelText: 'Password',
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30)),
                       suffixIcon: Icon(Icons.lock)),
-                  validator: (input) => input!.length < 8
-                      ? 'Must be at least 8 characters'
-                      : null,
-                  onSaved: (input) => _password = input,
                   obscureText: true,
                 )),
             Row(
@@ -75,8 +56,14 @@ class _LoginPageState extends State<LoginPage> {
                   child: Padding(
                     padding: const EdgeInsets.all(25.0),
                     child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/qrcode');
+                      onPressed: () async {
+                        //if (Credential == true) {
+                        await AuthServices.signIn(
+                            emailController.text, passwordController.text);
+                        //Navigator.pushNamed(context, '/signup');
+                        //} else {
+                        //return null;
+                        //}
                       },
                       child: Text(
                         'Login',
@@ -88,7 +75,10 @@ class _LoginPageState extends State<LoginPage> {
                   child: Padding(
                     padding: const EdgeInsets.all(25.0),
                     child: TextButton(
-                      onPressed: () {
+                      onPressed: () //async
+                          {
+                        //await AuthServices.signUp(
+                        //emailController.text, passwordController.text);
                         Navigator.pushNamed(context, '/signup');
                       },
                       child: Text(
@@ -107,15 +97,4 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-
-  void _submit() {
-    if (_formKey.currentState!.validate()) {
-      _formKey.currentState!.save();
-      // perform login here
-      print(_email);
-      print(_password);
-    }
-  }
-
-  //RaisedButton({required void Function() onPressed, required Text child}) {}
 }
