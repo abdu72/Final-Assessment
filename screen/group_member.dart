@@ -5,13 +5,14 @@ class GroupMember extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const appTitle = 'Form Validation Demo';
+    const appTitle = 'Group Member';
 
     return MaterialApp(
       title: appTitle,
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-            title: const Text('Form'),
+            title: const Text('Add Member'),
             leading: GestureDetector(
               child: const Icon(
                 Icons.arrow_back_ios,
@@ -40,43 +41,63 @@ class MyCustomForm extends StatefulWidget {
 // Create a corresponding State class.
 // This class holds data related to the form.
 class MyCustomFormState extends State<MyCustomForm> {
-  // Create a global key that uniquely identifies the Form widget
-  // and allows validation of the form.
-  //
-  // Note: This is a GlobalKey<FormState>,
-  // not a GlobalKey<MyCustomFormState>.
-  final _formKey = GlobalKey<FormState>();
+  final _contentStyleHeader = const TextStyle(
+      color: Color(0xff999999), fontSize: 14, fontWeight: FontWeight.w700);
+  final _contentStyle = const TextStyle(
+      color: Color(0xff999999), fontSize: 14, fontWeight: FontWeight.normal);
+
+  String _word = "";
+  final growableList = <String>[''];
+
+  void _setWord(String word) {
+    setState(() {
+      _word = word;
+    });
+    _emailToList(word);
+  }
+
+  void _emailToList(String email) {
+    growableList.add(email);
+  }
+
+  TextEditingController myController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    // Build a Form widget using the _formKey created above.
-    return Form(
-      key: _formKey,
+    return Scaffold(
+        body: Center(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 16.0),
-            child: Text('Group Members'),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: ElevatedButton(
-              onPressed: () {
-                // Validate returns true if the form is valid, or false otherwise.
-                if (_formKey.currentState!.validate()) {
-                  // If the form is valid, display a snackbar. In the real world,
-                  // you'd often call a server or save the information in a database.
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Processing Data')),
-                  );
-                }
-              },
-              child: const Text('Back'),
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              margin: const EdgeInsets.all(30),
+              child: const Text(
+                "Invite Member by Email",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+              ),
             ),
-          ),
-        ],
-      ),
-    );
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: TextField(
+                decoration:
+                    const InputDecoration(border: UnderlineInputBorder()),
+                keyboardType: TextInputType.emailAddress,
+                controller: myController,
+              ),
+            ),
+            ElevatedButton(
+                onPressed: () => _setWord(myController.text),
+                child: const Text('Analyze')),
+            Expanded(
+                child: ListView.builder(
+              itemCount: growableList.length,
+              itemBuilder: ((context, index) {
+                return ListTile(
+                  title: Text('${growableList.elementAt(index)}'),
+                );
+              }),
+            )),
+          ]),
+    ));
   }
 }
