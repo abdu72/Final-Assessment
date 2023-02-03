@@ -28,7 +28,7 @@ This app has some features such as:
 * Percentage chart (it shows the project's progress based on checked tasks)
 
 ## Screen Navigation
-![diagram](https://user-images.githubusercontent.com/75247365/216215246-2ec991c7-56da-46b4-969f-6c73fb88b210.jpeg)
+![diagram2](https://user-images.githubusercontent.com/75247365/216493445-1d087ddb-f74a-48f4-8165-52ef79e6a4af.jpeg)
 
 ## Sequence Diagram
 ![sequence](https://user-images.githubusercontent.com/75247365/216248088-c05b20b4-d376-4904-8d1e-4e15580d17fd.jpeg)
