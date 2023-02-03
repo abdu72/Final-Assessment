@@ -6,7 +6,7 @@ class Milestone extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const appTitle = 'Form Validation Demo';
+    const appTitle = 'Milestones';
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -78,7 +78,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                   ),
                 ])),
         CheckboxListTile(
-            title: Text('Step 1'),
+            title: const Text('Step 1'),
             value: this.valuefirst,
             onChanged: (bool? value) {
               setState(() {
@@ -88,7 +88,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               });
             }),
         CheckboxListTile(
-            title: Text('Step 2'),
+            title: const Text('Step 2'),
             value: this.valuesecond,
             onChanged: (bool? value) {
               setState(() {
@@ -98,7 +98,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               });
             }),
         CheckboxListTile(
-            title: Text('Step 3'),
+            title: const Text('Step 3'),
             value: this.valuethird,
             onChanged: (bool? value) {
               setState(() {
@@ -108,7 +108,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               });
             }),
         CheckboxListTile(
-            title: Text('Step 4'),
+            title: const Text('Step 4'),
             value: this.valuefourth,
             onChanged: (bool? value) {
               setState(() {
