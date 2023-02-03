@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'main.dart';
+import 'package:flutter_animated_button/flutter_animated_button.dart';
 
 class MainPage extends StatelessWidget {
   @override
@@ -15,23 +16,45 @@ class MainPage extends StatelessWidget {
             SizedBox(height: 250),
             Padding(
               padding: const EdgeInsets.all(1.0),
-              child: ElevatedButton(
-                onPressed: () {
+              child: AnimatedButton(
+                animatedOn: AnimatedOn.onHover,
+                onPress: () {
                   Navigator.pushNamed(context, '/signin');
                 },
-                child: Text("Sign In"),
+                onChanges: (change) {},
+                height: 70,
+                width: 300,
+                text: 'SIGNIN',
+                isReverse: true,
+                selectedTextColor: Colors.black,
+                transitionType: TransitionType.LEFT_TOP_ROUNDER,
+                backgroundColor: Colors.black,
+                selectedBackgroundColor: Colors.lightGreen,
+                borderColor: Colors.white,
+                borderWidth: 1,
               ),
             ),
-            SizedBox(height: 8),
+            SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.all(1.0),
-              child: ElevatedButton(
-                onPressed: () {
+              child: AnimatedButton(
+                animatedOn: AnimatedOn.onHover,
+                onPress: () {
                   Navigator.pushNamed(context, '/signup');
                 },
-                child: Text("Sign Up"),
+                onChanges: (change) {},
+                height: 70,
+                width: 300,
+                text: 'SIGNUP',
+                isReverse: true,
+                selectedTextColor: Colors.black,
+                transitionType: TransitionType.LEFT_TOP_ROUNDER,
+                backgroundColor: Colors.black,
+                selectedBackgroundColor: Colors.lightGreen,
+                borderColor: Colors.white,
+                borderWidth: 1,
               ),
-            )
+            ),
           ],
         ),
       ),
