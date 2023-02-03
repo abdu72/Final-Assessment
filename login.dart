@@ -9,23 +9,29 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Form(
+        body: Form(
+      child: Container(
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: NetworkImage(
+                  "https://i.pinimg.com/originals/fe/e5/ea/fee5eab30a698c169dc4fd5752359c2c.jpg"),
+              fit: BoxFit.cover),
+        ),
         child: Column(
           children: <Widget>[
             SizedBox(height: 100),
             Text(
               'Welcome',
               style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   fontSize: 32,
-                  letterSpacing: 4.0,
                   fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 10),
             Text(
-              'Login neccesary to access this application',
-              style: TextStyle(
-                  color: Colors.black, fontSize: 15, letterSpacing: 1.0),
+              'Login is neccesary to access this application',
+              style: TextStyle(color: Colors.white, fontSize: 15),
             ),
             SizedBox(height: 20),
             Padding(
@@ -33,6 +39,8 @@ class LoginPage extends StatelessWidget {
                 child: TextFormField(
                   controller: emailController,
                   decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
                       labelText: 'Email',
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30)),
@@ -43,6 +51,8 @@ class LoginPage extends StatelessWidget {
                 child: TextFormField(
                   controller: passwordController,
                   decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
                       labelText: 'Password',
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30)),
@@ -56,8 +66,11 @@ class LoginPage extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(25.0),
                     child: ElevatedButton(
+                      style: (ElevatedButton.styleFrom(
+                          backgroundColor: Color.fromARGB(255, 32, 77, 155))),
                       onPressed: () async {
                         //if (Credential == true) {
+                        
                         await AuthServices.signIn(
                             emailController.text, passwordController.text);
                         //Navigator.pushNamed(context, '/signup');
@@ -67,6 +80,8 @@ class LoginPage extends StatelessWidget {
                       },
                       child: Text(
                         'Login',
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
@@ -84,8 +99,7 @@ class LoginPage extends StatelessWidget {
                       child: Text(
                         'Sign Up',
                         style: TextStyle(
-                          color: Colors.grey,
-                        ),
+                            color: Colors.white, fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
@@ -95,6 +109,6 @@ class LoginPage extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ));
   }
 }
