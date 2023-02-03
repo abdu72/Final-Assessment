@@ -33,3 +33,10 @@ This app has some features such as:
 ## Sequence Diagram
 ![sequence](https://user-images.githubusercontent.com/75247365/216248088-c05b20b4-d376-4904-8d1e-4e15580d17fd.jpeg)
 
+## References
+
+https://pub.dev/packages
+https://stackoverflow.com/
+https://www.flutterbeads.com/
+https://www.appsdeveloperblog.com/datatable-in-flutter-explained/
+https://www.educative.io/
