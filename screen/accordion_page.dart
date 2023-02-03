@@ -46,6 +46,16 @@ class _AccordionPage extends StatelessWidget {
         backgroundColor: Colors.blueGrey[100],
         appBar: AppBar(
           title: const Text('Group Project Management'),
+          actions: <Widget>[
+            Padding(
+                padding: EdgeInsets.all(3),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Icon(Icons.logout),
+                ))
+          ],
         ),
         body: Accordion(
           maxOpenSections: 2,
