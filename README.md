@@ -8,9 +8,12 @@
 *Nisa Habiba 1918172*
 
 ## Table of contents
-* [About Project](#about-project)
-* [Objectives](#objectives)
-* [Features and Functionalities](#features-and-functionalities)
+* [About Project](#About-Project)
+* [Objectives](#Objectives)
+* [Features and Functionalities](#Features-and-Functionalities)
+* [Screen Navigation](#Screen-Navigation)
+* [Sequence Diagram](#Sequence-Diagram)
+* [References](#References)
 
 ## About Project
 This project title is Group Project Management System. It allows students to track the progress of their group assignment by charts. Students can do login to the app and put their project's detail. The app divides the project to five milestones according to SDLC (Project Planning - Design - Development - Testing - Project Closure). For each milestone, it has a list of checkbox to track the works that have been done. The result of tracking is represented in the form of chart.
@@ -35,8 +38,8 @@ This app has some features such as:
 
 ## References
 
-https://pub.dev/packages
-https://stackoverflow.com/
-https://www.flutterbeads.com/
-https://www.appsdeveloperblog.com/datatable-in-flutter-explained/
-https://www.educative.io/
+[https://pub.dev/packages](https://pub.dev/packages)
+[https://stackoverflow.com/](https://stackoverflow.com/)
+[https://www.flutterbeads.com/](https://www.flutterbeads.com/)
+[https://www.appsdeveloperblog.com/datatable-in-flutter-explained/](https://www.appsdeveloperblog.com/datatable-in-flutter-explained/)
+[https://www.educative.io/](https://www.educative.io/)
