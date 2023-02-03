@@ -38,8 +38,8 @@ This app has some features such as:
 
 ## References
 
-[https://pub.dev/packages](https://pub.dev/packages)
-[https://stackoverflow.com/](https://stackoverflow.com/)
-[https://www.flutterbeads.com/](https://www.flutterbeads.com/)
-[https://www.appsdeveloperblog.com/datatable-in-flutter-explained/](https://www.appsdeveloperblog.com/datatable-in-flutter-explained/)
-[https://www.educative.io/](https://www.educative.io/)
+* [https://pub.dev/packages](https://pub.dev/packages)
+* [https://stackoverflow.com/](https://stackoverflow.com/)
+* [https://www.flutterbeads.com/](https://www.flutterbeads.com/)
+* [https://www.appsdeveloperblog.com/datatable-in-flutter-explained/](https://www.appsdeveloperblog.com/datatable-in-flutter-explained/)
+* [https://www.educative.io/](https://www.educative.io/)
