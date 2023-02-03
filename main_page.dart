@@ -19,6 +19,17 @@ class MainPage extends StatelessWidget {
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                const Padding(
+                  padding: EdgeInsets.all(50.0),
+                  child: Text(
+                    'Group Project Management App',
+                    style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
                 Padding(
                   padding: const EdgeInsets.all(1.0),
                   child: AnimatedButton(
