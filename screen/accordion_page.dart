@@ -1,12 +1,12 @@
 import 'package:accordion/accordion.dart';
 import 'package:accordion/controllers.dart';
-import 'package:final_part/screen/group_member.dart';
-import 'package:final_part/screen/project_details.dart';
-import 'package:final_part/screen/milestones.dart';
+import 'package:new_file/screen/group_member.dart';
+import 'package:new_file/screen/project_details.dart';
+import 'package:new_file/screen/milestones.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
-/*class AccordionPage extends StatelessWidget {
+class AccordionPage extends StatelessWidget {
   const AccordionPage({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
@@ -21,22 +21,15 @@ import 'package:percent_indicator/percent_indicator.dart';
       home: _AccordionPage(),
     );
   }
-}*/
+}
 
-class AccordionPage extends StatelessWidget {
+class _AccordionPage extends StatelessWidget {
   final _headerStyle = const TextStyle(
       color: Color(0xffffffff), fontSize: 15, fontWeight: FontWeight.bold);
   final _contentStyleHeader = const TextStyle(
       color: Color(0xff999999), fontSize: 14, fontWeight: FontWeight.w700);
   final _contentStyle = const TextStyle(
       color: Color(0xff999999), fontSize: 14, fontWeight: FontWeight.normal);
-  final _groupDetail = '''
-Group Name :
-Subject Name :
-Lecturer Name :
-Section :
-Due Date :
-          ''';
 
   final _milestone1 = "Project Planning";
 
@@ -75,7 +68,7 @@ Due Date :
               content: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  Text(_groupDetail, textAlign: TextAlign.left),
+                  Text('Edit your group details here'),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.green,
@@ -263,64 +256,7 @@ Due Date :
               content: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  DataTable(
-                    sortAscending: true,
-                    sortColumnIndex: 1,
-                    dataRowHeight: 40,
-                    showBottomBorder: false,
-                    columns: [
-                      DataColumn(
-                          label: Text('No', style: _contentStyleHeader),
-                          numeric: true),
-                      DataColumn(
-                          label: Text('Name', style: _contentStyleHeader)),
-                      DataColumn(
-                          label: Text('Email', style: _contentStyleHeader),
-                          numeric: true),
-                    ],
-                    rows: [
-                      DataRow(
-                        cells: [
-                          DataCell(Text('1',
-                              style: _contentStyle,
-                              textAlign: TextAlign.right)),
-                          DataCell(Text('Ray', style: _contentStyle)),
-                          DataCell(Text('student@gmail.com',
-                              style: _contentStyle, textAlign: TextAlign.right))
-                        ],
-                      ),
-                      DataRow(
-                        cells: [
-                          DataCell(Text('2',
-                              style: _contentStyle,
-                              textAlign: TextAlign.right)),
-                          DataCell(Text('Ken', style: _contentStyle)),
-                          DataCell(Text('student@gmail.com',
-                              style: _contentStyle, textAlign: TextAlign.right))
-                        ],
-                      ),
-                      DataRow(
-                        cells: [
-                          DataCell(Text('3',
-                              style: _contentStyle,
-                              textAlign: TextAlign.right)),
-                          DataCell(Text('Beny', style: _contentStyle)),
-                          DataCell(Text('student@gmail.com',
-                              style: _contentStyle, textAlign: TextAlign.right))
-                        ],
-                      ),
-                      DataRow(
-                        cells: [
-                          DataCell(Text('4',
-                              style: _contentStyle,
-                              textAlign: TextAlign.right)),
-                          DataCell(Text('Joe', style: _contentStyle)),
-                          DataCell(Text('student@gmail.com',
-                              style: _contentStyle, textAlign: TextAlign.right))
-                        ],
-                      ),
-                    ],
-                  ),
+                  Text('Add your group member here'),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.green,
@@ -331,7 +267,7 @@ Due Date :
                           MaterialPageRoute(
                               builder: (context) => const GroupMember()));
                     },
-                    child: const Text('Edit'),
+                    child: const Text('Add'),
                   ),
                   const SizedBox(height: 30),
                 ],
