@@ -36,6 +36,9 @@ This app has some features such as:
 ## Sequence Diagram
 ![sequence](https://user-images.githubusercontent.com/75247365/216248088-c05b20b4-d376-4904-8d1e-4e15580d17fd.jpeg)
 
+## Job Distribution among Group Member
+![Job Distribution - Sheet1_page-0001](https://user-images.githubusercontent.com/75247365/216741560-c84869f2-c2b2-431e-bb26-a8ba62c3e7f3.jpg)
+
 ## References
 
 * [https://pub.dev/packages](https://pub.dev/packages)
